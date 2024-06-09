@@ -1,5 +1,5 @@
 import React, { useReducer, useEffect } from "react";
-import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import Booking from "./Booking";
 import ConfirmedBooking from "./ConfirmedBooking";
 import Header from "./Header";
@@ -44,6 +44,7 @@ const Main = () => {
         return {availableTimes: fetchAPI(new Date(date))}
     }
     const navigate = useNavigate();
+    
     function submitForm (formData) {
         if (submitAPI(formData)) {
             navigate("/confirmed")
